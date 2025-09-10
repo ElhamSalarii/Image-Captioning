@@ -29,27 +29,6 @@ Organizing files in the expected directory structure
 
 > Tip: If you have a specific dataset, replace the example paths and dataset name in the configs.
 
-image_captioning_assignment/
-├── data/
-│   └── download_flickr.py     # Script to download and prepare Flickr8k dataset
-├── models/
-│   ├── encoder.py             # CNN encoder implementations 
-│   ├── decoder.py             # RNN decoder implementations
-│   └── caption_model.py       # Combined encoder-decoder model
-├── utils/
-│   ├── dataset.py             # Dataset and data loader utilities
-│   ├── vocabulary.py          # Vocabulary building and text processing
-│   ├── trainer.py             # Training loop and optimization
-│   └── metrics.py             # Evaluation metrics (BLEU, etc.)
-├── notebooks/
-│   ├── 1_Data_Exploration.ipynb       # Dataset exploration
-│   ├── 2_Feature_Extraction.ipynb     # CNN feature extraction
-│   ├── 3_Model_Training.ipynb         # Model training
-│   └── 4_Evaluation_Visualization.ipynb # Results analysis
-├── requirements.txt           # Project dependencies
-└── README.md                  # Project documentation
-
-
 Student TODO Sections
 Throughout this project, you'll need to implement various components marked with TODO comments. Here's a summary of what you'll be working on:
 
