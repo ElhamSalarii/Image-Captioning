@@ -84,20 +84,20 @@ Evaluation: Implement metrics calculation and results visualization
 - CUDA toolkit (optional but recommended for GPU acceleration)
 - 
 ### Installation
-1) Clone this repository:
+- 1) Clone this repository:
 
-git clone https://github.com/Mound21k/image-captioning.git
-cd image-captioning
-Plain text
-Create a virtual environment and install dependencies:
+- git clone https://github.com/Mound21k/image-captioning.git
+- cd image-captioning
+ - Plain text
+- Create a virtual environment and install dependencies:
 
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-Plain text
-Download the Flickr8k dataset:
+- python -m venv venv
+- source venv/bin/activate  # On Windows: venv\Scripts\activate
+- pip install -r requirements.txt
+- Plain text
+- Download the Flickr8k dataset:
 
-python data/download_flickr.py --data_dir ./data
+- python data/download_flickr.py --data_dir ./data
 
 ### Running a Baseline
 
