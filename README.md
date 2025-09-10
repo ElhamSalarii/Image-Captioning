@@ -1,5 +1,3 @@
-حتماً. در ادامه نسخه کامل، منسجم و قالب‌بندی‌شده‌ی README برای پروژهٔ «Image Captioning with CNN-RNN Architecture» را ارائه می‌کنم. می‌توانید مستقیماً در مخزن استفاده کنید یا محتوای آن را با جزئیات پروژهٔ خود تطبیق دهید.
-
 # Image Captioning with CNN-RNN Architecture — Repository Description
 
 ## 1) Project Overview
