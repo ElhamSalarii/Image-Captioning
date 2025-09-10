@@ -1,15 +1,91 @@
 # Image Captioning with CNN-RNN Architecture — Repository Description
+This repository contains an implementation framework for an image captioning system using a combination of Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs). The system takes images as input and generates natural language descriptions of their content.
+
+Image captioning sits at the intersection of computer vision and natural language processing, combining feature extraction from images with sequence modeling for text generation. This implementation follows the encoder-decoder architecture:
+
 
 ## 1) Project Overview
 
 **Goal:** Provide a complete workflow for building, training, and evaluating an image captioning model using a CNN encoder and an RNN/LSTM decoder.
 
+
+- An encoder (CNN) extracts visual features from input images
+- A decoder (RNN/LSTM/GRU) generates captions word-by-word based on these features
+
 - **Task:** Image captioning – generate descriptive sentences for given images.
 - **Architecture:** CNN encoder + Recurrent Neural Network (RNN, e.g., LSTM/GRU) decoder.
-- **Dataset (examples):** COCO, Flickr8k/30k, or a custom captioning dataset.
+- **Dataset (examples):** This project uses the Flickr8k dataset, which contains:
+
+Approximately 8,000 images
+5 different captions for each image (40,000 captions total)
+A diverse range of scenes, objects, and actions
+The download_flickr.py script handles:
+
+Downloading the images and captions
+Preprocessing captions (cleaning, normalization)
+Creating train/validation/test splits
+Organizing files in the expected directory structure
 - **Output:** Trained model checkpoints, generated captions, and evaluation metrics (BLEU, METEOR, CIDEr, ROUGE).
 
 > Tip: If you have a specific dataset, replace the example paths and dataset name in the configs.
+
+image_captioning_assignment/
+├── data/
+│   └── download_flickr.py     # Script to download and prepare Flickr8k dataset
+├── models/
+│   ├── encoder.py             # CNN encoder implementations 
+│   ├── decoder.py             # RNN decoder implementations
+│   └── caption_model.py       # Combined encoder-decoder model
+├── utils/
+│   ├── dataset.py             # Dataset and data loader utilities
+│   ├── vocabulary.py          # Vocabulary building and text processing
+│   ├── trainer.py             # Training loop and optimization
+│   └── metrics.py             # Evaluation metrics (BLEU, etc.)
+├── notebooks/
+│   ├── 1_Data_Exploration.ipynb       # Dataset exploration
+│   ├── 2_Feature_Extraction.ipynb     # CNN feature extraction
+│   ├── 3_Model_Training.ipynb         # Model training
+│   └── 4_Evaluation_Visualization.ipynb # Results analysis
+├── requirements.txt           # Project dependencies
+└── README.md                  # Project documentation
+
+
+Student TODO Sections
+Throughout this project, you'll need to implement various components marked with TODO comments. Here's a summary of what you'll be working on:
+
+Core Implementation Tasks
+Data Processing (download_flickr.py):
+
+Process captions from the Flickr8k dataset
+Create train/val/test splits
+Encoder (encoder.py):
+
+Initialize CNN backbones (ResNet, MobileNet)
+Create projection layers for feature vectors
+Decoder (decoder.py):
+
+Implement the RNN/LSTM/GRU decoder
+Create word embedding layers
+Implement the caption generation logic with teacher forcing
+Implement greedy decoding for inference
+Caption Model (caption_model.py):
+
+Integrate encoder and decoder
+Implement the forward pass
+Implement caption generation
+Data Utilities:
+
+Build vocabulary and tokenization functions (vocabulary.py)
+Create dataset loaders and transformations (dataset.py)
+Implement evaluation metrics (metrics.py)
+Create training and validation loops (trainer.py)
+Notebook Implementation Tasks
+Each notebook contains specific TODOs:
+
+Data Exploration: Implement functions to visualize and analyze the dataset
+Feature Extraction: Implement feature extraction using pre-trained CNNs
+Model Training: Implement model training, parameter counting, and caption generation
+Evaluation: Implement metrics calculation and results visualization
 
 ## 2) Key Features
 
@@ -27,30 +103,22 @@
 - Python >= 3.7
 - PyTorch or TensorFlow (depending on the implementation)
 - CUDA toolkit (optional but recommended for GPU acceleration)
-- Dependencies listed in `requirements.txt`
-
+- 
 ### Installation
-1) Clone the repository
-```bash
-git clone https://github.com/username/repo.git
-```
+1) Clone this repository:
 
-2) Create a virtual environment (recommended)
-```bash
-# macOS/Linux
-python -m venv env
-source env/bin/activate
+git clone https://github.com/Mound21k/image-captioning.git
+cd image-captioning
+Plain text
+Create a virtual environment and install dependencies:
 
-# Windows
-python -m venv env
-.\env\Scripts\activate
-```
-
-3) Install dependencies
-```bash
-cd repo
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-```
+Plain text
+Download the Flickr8k dataset:
+
+python data/download_flickr.py --data_dir ./data
 
 ### Running a Baseline
 
