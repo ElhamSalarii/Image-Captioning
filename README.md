@@ -89,20 +89,21 @@ Evaluation: Implement metrics calculation and results visualization
 - git clone
   ```bash
  https://github.com/Mound21k/image-captioning.git
+ cd image-captioning
 
-cd image-captioning
+Plain text
+Create a virtual environment and install dependencies:
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+Plain text
+Download the Flickr8k dataset:
+
+python data/download_flickr.py --data_dir ./data
  ```
 
- - Plain text
-- Create a virtual environment and install dependencies:
 
-- python -m venv venv
-- source venv/bin/activate  # On Windows: venv\Scripts\activate
-- pip install -r requirements.txt
-- Plain text
-- Download the Flickr8k dataset:
-
-- python data/download_flickr.py --data_dir ./data
 
 ### Running a Baseline
 
