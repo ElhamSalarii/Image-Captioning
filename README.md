@@ -86,8 +86,13 @@ Evaluation: Implement metrics calculation and results visualization
 ### Installation
 - 1) Clone this repository:
 
-- git clone https://github.com/Mound21k/image-captioning.git
-- cd image-captioning
+- git clone
+  ```bash
+ https://github.com/Mound21k/image-captioning.git
+
+cd image-captioning
+ ```
+
  - Plain text
 - Create a virtual environment and install dependencies:
 
